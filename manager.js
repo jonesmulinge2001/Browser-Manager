@@ -2,82 +2,96 @@ const divExtensions = document.querySelector("#extensions");
 const activeBtn = document.getElementById("active");
 const inactiveBtn = document.getElementById("Inactive");
 const allBtn = document.getElementById("all");
+const sunBtn = document.querySelector(".fas .fa-sun .sunBtn");
 
 window.onload = function(){
     getAllBrowserExtensions(browserExtensions);
+//    let browserExtensiosn = JSON.parse(localStorage.getItem("extensions"))|| [];
 }
+ 
+// function to toggle between dark mode and light mode
+// function handleTheme(){
+//     const body = document.body;
+//     body.classList.toggle("dark");
+//     body.classList.toggle("light");
+// }
+
+// sunBtn.addEventListener("click",function(){
+//     handleTheme();
+// })
 
 const browserExtensions = [
+    
     {
         name: "DevLens",
         description: "Quickly inspect page layout and visualize element boundaries",
-        icon: "https://raw.githubusercontent.com/hbenl/vscode-devlens/master",
+       
         active: true
     },
     {
         name: "StyleSpy",
         description: "Instantly analyze and copy CSS from any webpage element",
-        icon: "https://raw.githubusercontent.com/",
+       
         active: true
     },
     {
         name: "SpeedBoost",
         description: "Optimizes browser resource usage to accelerate page loading",
-        icon: "https://raw.githubusercontent.com/",
+     
         active: false
     },
     {
         name: "JSONWizard",
         description: "Formats, validates, and prettifies JSON responses in-browser",
-        icon: "https://raw.githubusercontent.com/",
+       
         active: true
     },
     {
         name: "TabMaster Pro",
         description: "Organizes browser tabs into groups and sessions",
-        icon: "https://raw.githubusercontent.com/",
+      
         active: true
     },
     {
         name: "ViewportBuddy",
         description: "Simulates various screen resolutions directly within the browser",
-        icon: "https://raw.githubusercontent.com/",
+      
         active: false
     },
     {
         name: "Markup Notes",
         description: "Enables annotation and notes directly onto webpages for collaborative debugging",
-        icon: "https://raw.githubusercontent.com/",
+      
         active: true
     },
     {
         name: "GridGuides",
         description: "Overlay customizable grids and alignment guides on any webpage",
-        icon: "https://raw.githubusercontent.com/",
+        
         active: false
     },
     {
         name: "Palette Picker",
         description: "Instantly extracts color palettes from any webpage",
-        icon: "https://raw.githubusercontent.com/",
+       
         active: true
     },
     {
         name: "LinkChecker",
         description: "Scans and highlights broken links on any page",
-        icon: "https://raw.githubusercontent.com/",
+      
         active: true
     },
     {
         name: "DOM Snapshot",
         description: "Capture and export DOM structures quickly",
-        icon: "https://raw.githubusercontent.com/",
+ 
         active: false
     },
     {
         name: "ConsolePlus",
         description: "Enhanced developer console with advanced filtering and logging",
-        icon: "https://raw.githubusercontent.com/",
+    
         active: false
     }
 ];
@@ -119,6 +133,8 @@ function filterActiveExtensions(extensions) {
         divExtensions.appendChild(div);
 
     })
+
+    // localStorage.setItem("extension",JSON.stringify(extensions))
 };
 
 //function to filter based on active status (the ones with false)
@@ -143,6 +159,8 @@ function filterInactiveExtensions(extensions) {
         `
         divExtensions.appendChild(ndiv);
     })
+
+    // localStorage.setItem("extension",JSON.stringify(extensions))
 }
 
 // function to get all the browser extensions
@@ -162,4 +180,7 @@ function getAllBrowserExtensions(extensions) {
         `
         divExtensions.appendChild(div);
     })
+    // store extensions to local storage
+    // localStorage.setItem("Extensions",JSON.stringify(extensions));
+
 }
