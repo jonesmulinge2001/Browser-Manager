@@ -1,0 +1,46 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.parent{
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 3rem;
+}
+.parent > .header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+    background-color: #1f2535;
+    color: #fff;
+    border-radius: 10px;
+}
+.header > .header > h4{
+    font-size: 10px;
+}
+.header > h4 > i{
+    color: #ed5d52;
+}
+.parent > .tabs{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.parent > .tabs > .statusButtons{
+    display: flex;
+    gap: 1rem;
+}
+.parent > .tabs > .statusButtons > button{
+    border: none;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: #2d3349;
+    color: #ffff;
+    cursor: pointer;
+    width: 5rem;
+}
+.parent > .tabs > .statusButtons > button:first-child{
+    background-color: #ed5d52;
+    color: #000;
+}
