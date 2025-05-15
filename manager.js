@@ -1,7 +1,11 @@
 const divExtensions = document.querySelector("#extensions");
 const activeBtn = document.getElementById("active");
 const inactiveBtn = document.getElementById("Inactive");
-const all = document.getElementById("all");
+const allBtn = document.getElementById("all");
+
+window.onload = function(){
+    getAllBrowserExtensions(browserExtensions);
+}
 
 const browserExtensions = [
     {
@@ -88,6 +92,11 @@ inactiveBtn.addEventListener("click", ()=>{
     filterInactiveExtensions(browserExtensions);
 });
 
+//add event listener to the all button
+allBtn.addEventListener("click", ()=>{
+    getAllBrowserExtensions(browserExtensions);
+})
+
 //function to filter based on active status (the ones with true)
 function filterActiveExtensions(extensions) {
     divExtensions.innerHTML = '';
@@ -102,7 +111,10 @@ function filterActiveExtensions(extensions) {
             <h1>${extension.name}</h1>
             <p>${extension.description}</p>
             <p>${extension.icon}</p>
-            <button>Remove</button>
+            <div class="btnIcon">
+                <button>Remove</button>
+                <i class='bx bx-toggle-right'></i>
+            </div>
         `
         divExtensions.appendChild(div);
 
@@ -123,7 +135,31 @@ function filterInactiveExtensions(extensions) {
             <h1>${extension.name}</h1>
             <p>${extension.description}</p>
             <p>${extension.icon}</p>
+            <div class="btnIcon">
+                <button>Remove</button>
+                <i class='bx bx-toggle-left'></i>
+            </div>
+
         `
         divExtensions.appendChild(ndiv);
+    })
+}
+
+// function to get all the browser extensions
+function getAllBrowserExtensions(extensions) {
+    divExtensions.innerHTML = ''
+    const allExtensions = extensions.filter(extension =>{
+        return extension.active === true || extension.active === false;
+    });
+
+    allExtensions.forEach(extension =>{
+        const div = document.createElement('div');
+        div.innerHTML = `
+            <h1>${extension.name}</h1>
+            <p>${extension.description}</p>
+            <p>${extension.icon}</p>
+            <button>Remove</button>
+        `
+        divExtensions.appendChild(div);
     })
 }

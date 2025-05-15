@@ -44,3 +44,31 @@
     background-color: #ed5d52;
     color: #000;
 }
+#extensions{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    background: linear-gradient(to bottom, #050a1d, #0a1640);
+    color: #fff;
+    padding: 2rem;
+    gap: 1rem;
+}
+#extensions > div{
+    background-color: #1f2535;
+    padding: 20px;
+    border-radius: 20px;
+    .btnIcon{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #ed5d52;
+    }
+    button{
+        width: 4rem;
+        background-color: #1f2535;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 20px;
+        margin-top: 1rem;
+        padding: 5px;
+    }
+}
